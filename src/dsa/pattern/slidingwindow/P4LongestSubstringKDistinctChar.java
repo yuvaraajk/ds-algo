@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given a string, find the length of the longest substring in it with no more than K distinct characters.
+ * Given a string, find the length of the longest substring in it with no more than K distinct
+ * characters.
  */
 public class P4LongestSubstringKDistinctChar {
 
@@ -16,8 +17,9 @@ public class P4LongestSubstringKDistinctChar {
      * @return
      */
     private static int findLengthOfLongestSubstring(String input, int k) {
-        if (input == null || input.isEmpty() || input.length() < k)
+        if (input == null || input.isEmpty() || input.length() < k) {
             return 0;
+        }
         int maxLength = 0, windowSum = 0, windowStart = 0;
         Map<Character, Integer> charFreqMap = new HashMap<>();
         for (int windowEnd = 0; windowEnd < input.length(); windowEnd++) {
@@ -37,6 +39,8 @@ public class P4LongestSubstringKDistinctChar {
     }
 
     public static void main(String[] args) {
-        System.out.println(findLengthOfLongestSubstring("cbbebi", 3));
+        System.out.println(
+            "Length of longest substring with k distinct char: " + findLengthOfLongestSubstring(
+                "cbbebi", 3));
     }
 }
